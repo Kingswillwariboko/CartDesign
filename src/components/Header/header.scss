@@ -5,13 +5,18 @@
     align-items: center;
     position: relative;
     &__one{
+        display: flex;
+        align-items: center;
+        justify-content: end;
         img{
-            margin-right: .6rem;
+            margin-right: .5rem;
         }
     }
 
     &__two{
-        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: end;
         .cart{
             width: 22%;
             margin-right: .7rem;
