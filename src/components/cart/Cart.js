@@ -19,7 +19,7 @@ const Cart = ()=>{
             </div>
             <div className="cart__two">
                 <div className="cart__two-one">
-                    <span className="price-one">$125</span>
+                    <span className="price-one">$130</span>
                     <span className="price-three">$250</span>
                 </div>
 
