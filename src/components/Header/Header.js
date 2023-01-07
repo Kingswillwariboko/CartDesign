@@ -15,17 +15,15 @@ const Header = () => {
         {active && <div onClick={() =>setActive(prev => false)} className="backdrop"></div>}
         <header className="header">
             <div className="header__one">
-                <img onClick={() => setActive(prev => true)}src={icon} alt=""/>
-                <img src={logo} alt=""/>
+                <h4>SHOPBIEMA</h4>
             </div>
 
-            <div className="header__two">
+            {/* <div className="header__two">
                 <img className="cart" src={cart}  alt=""/>
                 <img className="avatar" src={avatar} alt=""/>
-            </div>
+            </div> */}
 
-            <div className={active ? "header__nav" : "header__active"}>
-
+           {/* <div className={active ? "header__nav" : "header__active"}>
                 <ul>
                     <li>Collection</li>
                     <li>Men</li>
@@ -39,7 +37,7 @@ const Header = () => {
                       <img onClick={(e) => setActive(prev => false)} className="img" src={cancel} alt=""/>
                     </div>
                 )
-            }
+            } */}
         </header>
         </>
     )
