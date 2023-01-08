@@ -1,5 +1,9 @@
 .cart{
     padding: 1rem;
+    @media (min-width: 768px){
+        width: 40%;
+       
+    }
     &__one{
         h4{
             color: orange;

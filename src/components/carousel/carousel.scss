@@ -1,0 +1,109 @@
+.main-main{
+    background-color: #ffff;
+    text-align: center;
+    position: relative;
+
+    @media (min-width: 768px){
+        width: 50%;
+    }
+
+    h3{
+        padding: .5rem;
+    }
+
+    .carousel-container{
+        background: #f1f1f1;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+
+        @media (min-width: 768px){
+            display: none;
+        }
+    
+        .carousel-item{
+            height: 20rem;
+            min-width: 100%;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    button{
+        background-color: #ffff;
+        border: 0;
+        border-radius: 20px;
+        padding: .5rem;
+        padding-left: .7rem;
+        padding-right: .7rem;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .next{
+        position: absolute;
+        top: 50%;
+        right: 5%;
+    }
+
+    .previous{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+    }
+    .carousel-container-desktop{
+        display: none;
+    }
+
+    .carousel-container-desktop{
+        background: #f1f1f1;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    
+        @media (min-width: 768px){
+            display: flex;
+        }
+        .carousel-item{
+            height: 20rem;
+            min-width: 100%;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+.round1{
+    display: flex;
+}
+.round{
+    border-radius: 30px;
+    width: 10%;
+    border: 2px solid green;
+    margin-left: 3rem;
+}
+.main{
+    border: 2px solid blue;
+    border-radius: 30px;
+    width: 10%;
+    margin-left: 3rem;
+}
