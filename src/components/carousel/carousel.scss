@@ -59,16 +59,14 @@
         top: 50%;
         left: 5%;
     }
-    .carousel-container-desktop{
-        display: none;
-    }
-
+    
     .carousel-container-desktop{
         background: #f1f1f1;
         width: 100%;
         display: flex;
         flex-wrap: nowrap;
         overflow: hidden;
+        display: none;
     
         @media (min-width: 768px){
             display: flex;
