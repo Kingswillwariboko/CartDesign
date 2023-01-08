@@ -6,7 +6,6 @@ import cart from "../../ecommerce-product-page-main/images/icon-cart.svg"
 import "./Cart.scss"
 
 const Cart = ()=>{
-
     return(
         <div className="cart">
             <div className="cart__one">
@@ -20,7 +19,6 @@ const Cart = ()=>{
             <div className="cart__two">
                 <div className="cart__two-one">
                     <span className="price-one">$130</span>
-                    <span className="price-three">$250</span>
                 </div>
 
                 <div className="cart__two-two">

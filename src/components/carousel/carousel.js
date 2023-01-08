@@ -8,13 +8,13 @@ import "./carousel.scss"
 
 const data = [
     {
-        image: 'https://pbs.twimg.com/media/FYomoV2WAAEZ8qi?format=jpg&name=medium'
+        image: 'https://user-images.githubusercontent.com/54893238/211213778-97698107-df79-4ac9-b8a2-7bd14b29555c.jpg'
     },
     {
-        image: 'https://pbs.twimg.com/media/FYooCBpWYAANpOo?format=jpg&name=medium'
+        image: 'https://user-images.githubusercontent.com/54893238/211213795-38e2b70a-957c-424b-a55d-3f216d2f1957.jpg'
     },
     {
-        image: 'https://pbs.twimg.com/media/FYoqeOlXwAAsFmL?format=jpg&name=medium'
+        image: 'https://user-images.githubusercontent.com/54893238/211213800-7b1dd756-33bd-4521-9c2c-9aa97bd04439.jpg'
     }
 ]
 
