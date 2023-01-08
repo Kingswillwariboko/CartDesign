@@ -8,13 +8,13 @@ import "./carousel.scss"
 
 const data = [
     {
-        image: 'https://user-images.githubusercontent.com/54893238/211213778-97698107-df79-4ac9-b8a2-7bd14b29555c.jpg'
+        image: 'https://user-images.githubusercontent.com/54893238/211214114-47f4df9f-c533-4d21-b920-8b44e4761b6f.jpeg'
     },
     {
-        image: 'https://user-images.githubusercontent.com/54893238/211213795-38e2b70a-957c-424b-a55d-3f216d2f1957.jpg'
+        image: 'https://user-images.githubusercontent.com/54893238/211214122-3bd721d5-8ba7-4de1-a026-860884afc4b8.jpeg'
     },
     {
-        image: 'https://user-images.githubusercontent.com/54893238/211213800-7b1dd756-33bd-4521-9c2c-9aa97bd04439.jpg'
+        image: 'https://user-images.githubusercontent.com/54893238/211214122-3bd721d5-8ba7-4de1-a026-860884afc4b8.jpeg'
     }
 ]
 

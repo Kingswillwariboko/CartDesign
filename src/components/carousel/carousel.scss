@@ -70,6 +70,8 @@
     
         @media (min-width: 768px){
             display: flex;
+            margin-left: 2rem;
+            background-color: inherit;
         }
         .carousel-item{
             height: 20rem;
@@ -79,9 +81,20 @@
             align-items: center;
             justify-content: center;
             transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+            @media (min-width: 768px){
+                height: 450px;
+            }
     
             img{
                 width: 100%;
+
+                @media (min-width: 768px){
+                    height: 450px;
+                    width: 90%;
+                    border-radius: 20px;
+                }
+                
             }
         }
     }
