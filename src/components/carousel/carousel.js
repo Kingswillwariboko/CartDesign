@@ -14,7 +14,7 @@ const data = [
         image: 'https://user-images.githubusercontent.com/54893238/211214122-3bd721d5-8ba7-4de1-a026-860884afc4b8.jpeg'
     },
     {
-        image: 'https://user-images.githubusercontent.com/54893238/211214122-3bd721d5-8ba7-4de1-a026-860884afc4b8.jpeg'
+        image: 'https://user-images.githubusercontent.com/54893238/211214197-fb3b4ff7-f0fb-4082-b588-b3c1962f7ca3.jpeg'
     }
 ]
 
