@@ -4,6 +4,7 @@ import logo from "../../ecommerce-product-page-main/images/logo.svg";
 import cart from "../../ecommerce-product-page-main/images/icon-cart.svg";
 import avatar from "../../ecommerce-product-page-main/images/image-avatar.png";
 import cancel from "../../ecommerce-product-page-main/images/icon-close.svg";
+import log from "../../assets/logo.svg";
 
 import "./header.scss"
 
@@ -15,7 +16,7 @@ const Header = () => {
         {active && <div onClick={() =>setActive(prev => false)} className="backdrop"></div>}
         <header className="header">
             <div className="header__one">
-                <h4>SHOPBIEMA</h4>
+                <img src={log} alt="shopbiema" />
             </div>
 
             {/* <div className="header__two">
