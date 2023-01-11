@@ -4,7 +4,7 @@ import logo from "../../ecommerce-product-page-main/images/logo.svg";
 import cart from "../../ecommerce-product-page-main/images/icon-cart.svg";
 import avatar from "../../ecommerce-product-page-main/images/image-avatar.png";
 import cancel from "../../ecommerce-product-page-main/images/icon-close.svg";
-import log from "../../assets/logo.svg";
+import log from "../../assets/logo-transparent.svg";
 
 import "./header.scss"
 

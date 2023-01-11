@@ -78,9 +78,7 @@ const Carousel = ()=> {
                         return <div key={index} className="carousel-item"
                         style={{transform: `translate(-${currentIndex * 100}%)`}}><img src={item.image} alt=""/></div>
                         
-                    })}  
-
-                    
+                    })}        
             </div>    
 
             <div className="carousel-menu">
