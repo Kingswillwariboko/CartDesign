@@ -2,6 +2,7 @@
     background-color: #ffff;
     text-align: center;
     position: relative;
+    font-family: 'Roboto';
 
     @media (min-width: 768px){
         width: 50%;
@@ -99,23 +100,38 @@
             }
         }
     }
+
+    .carousel-menu{
+        display: none;
+        @media (min-width: 768px){
+            display: flex;
+            flex-direction: row;
+            margin-top: 1rem;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .round{
+            width: 15%;
+            margin-left: 3rem;
+        }
+
+        img{
+            width: 100%;
+            border: 10px;
+        }
+
+        .main{
+            border: 2px solid black;
+            margin-left: 3rem;
+            width: 15%;
+        }
+    }
 }
 
 
 
 
-.round1{
-    display: flex;
-}
-.round{
-    border-radius: 30px;
-    width: 10%;
-    border: 2px solid green;
-    margin-left: 3rem;
-}
-.main{
-    border: 2px solid blue;
-    border-radius: 30px;
-    width: 10%;
-    margin-left: 3rem;
-}
+
+
+

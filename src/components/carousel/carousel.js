@@ -78,14 +78,20 @@ const Carousel = ()=> {
                         return <div key={index} className="carousel-item"
                         style={{transform: `translate(-${currentIndex * 100}%)`}}><img src={item.image} alt=""/></div>
                         
-                    })}
+                    })}  
 
-                         <div className="round1">
-                            <div onClick={()=>  setCurrentIndex(0)} className={currentIndex === 0 ? "main": 'round'} ></div>
-                            <div onClick={()=> setCurrentIndex(1)} className={currentIndex === 1 ? "main": 'round'}></div>
-                            <div onClick={()=> setCurrentIndex(2)} className={currentIndex === 2 ? "main": 'round'}></div>
-                        </div>
+                    
             </div>    
+
+            <div className="carousel-menu">
+                           {data.map((item, index)=>{
+                            return <div onClick={()=>  setCurrentIndex(index)} className={currentIndex === index ? "main": 'round'} >
+                                    <img src={item.image} alt=""/>
+                                </div>
+                           })}
+            </div>  
+
+            
     </main>
    )
 }
