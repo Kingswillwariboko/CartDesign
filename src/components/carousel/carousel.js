@@ -62,7 +62,7 @@ const Carousel = ()=> {
     return(
         <main className="main-main">
             <div className="carousel-container">
-            {images?.items?.map((image) => (
+            {images?.items?.slice(0,3).map((image) => (
                      <div key={image.fields.title} className="carousel-item"
                     style={{transform: `translate(-${currentIndex * 100}%)`}}><img src={image.fields.file.url} alt=""/></div>
                     
@@ -79,7 +79,7 @@ const Carousel = ()=> {
 
             
             <div className="carousel-container-desktop">
-            {images?.items?.map((image) => (
+            {images?.items?.slice(0,3).map((image) => (
                      <div key={image.fields.title} className="carousel-item"
                         style={{transform: `translate(-${currentIndex * 100}%)`}}><img src={image.fields.file.url} alt=""/></div>
                         
