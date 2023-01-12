@@ -23,7 +23,7 @@ const Carousel = ()=> {
       }
     };
     getAllEntries()
-  }, [])
+  }, [images, client])
     
 
     const[currentIndex, setCurrentIndex] = useState(0)
