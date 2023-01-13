@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import log from "../../assets/logo-transparent.svg";
 
 
 import "./checkout.scss"
@@ -11,6 +12,9 @@ const Checkout = () => {
     const[email, setEmail]= useState('')
   return (
     <div>
+          <div className="header__one">
+                <img src={log} alt="shopbiema" />
+            </div>
         <form>
             <p>Kindly fill up to pay </p>
             <div className='inp'>
