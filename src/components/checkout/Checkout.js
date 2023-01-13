@@ -7,16 +7,38 @@ import "./checkout.scss"
 import { Link } from 'react-router-dom';
 
 const Checkout = () => {
-    const[name, setName] = useState('')
-    const[number, setNumber]= useState('')
-    const[email, setEmail]= useState('')
+    // const[name, setName] = useState('')
+    // const[number, setNumber]= useState('')
+    // const[email, setEmail]= useState('')
+
+  //   const handleSubmit = (e) =>{
+  //     e.preventDefault();
+ 
+    
+  //     db.collection("contacts")
+  //    .add({
+  //       email,
+  //       name,
+  //       number,
+  //    }).then(()=>{
+  //        console.log('success')
+  //        setTimeout(() => {
+  //          }, 5000); 
+  //          setEmail("")
+  //          setName('')
+  //          setNumber('')
+  //    }).catch((error)=>{
+  //       console.log(error.message)
+  //    })
+  // }
+
   return (
     <div>
           <div className="header__one">
                 <img src={log} alt="shopbiema" />
             </div>
         <form>
-            <p>Kindly fill up to pay </p>
+            {/* <p>Kindly fill up to pay </p>
             <div className='inp'>
                 <label>Full Name*</label> 
                 <input
@@ -45,11 +67,10 @@ const Checkout = () => {
                         required
                     />
             </div>
-
-            
+             */}
       <div className='button'>
       <PayPalScriptProvider>
-        <PayPalButtons
+        <PayPalButtons type="submit"
           createOrder={(data, actions) => {
             return actions.order.create({
               purchase_units: [
