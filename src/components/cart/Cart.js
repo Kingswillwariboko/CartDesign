@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { createClient } from "contentful"
-import plus from "../../ecommerce-product-page-main/images/icon-plus.svg"
-import close from "../../ecommerce-product-page-main/images/icon-minus.svg"
-import cart from "../../ecommerce-product-page-main/images/icon-cart.svg"
+
 
 import "./Cart.scss"
+import { Link } from 'react-router-dom'
 
 const Cart = ()=>{
 
@@ -23,7 +22,7 @@ const Cart = ()=>{
       }
     };
     getAllEntries()
-  }, [])
+  }, [info, client])
 
 
     return(
@@ -43,7 +42,9 @@ const Cart = ()=>{
                 <div className="cart__two-two">
                   
 
-                    <button className="add-btn">Buy now</button>
+                    <button className="add-btn">
+                     <Link to="/checkout"> Buy now </Link> 
+                    </button>
                 </div>
             </div>
         </div>))}

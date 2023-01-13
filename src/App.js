@@ -1,17 +1,28 @@
 
 import './App.scss';
-import Carousel from './components/carousel/carousel';
-import Cart from './components/cart/Cart';
-import Header from './components/Header/Header';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
+
+import Checkout from './components/checkout/Checkout';
+import Home from './Pages/Home/Home';
 
 const App = () =>{
   return(
     <main>
-      <Header />
-      <div className='home'>
-          <Carousel />
-          <Cart />
-      </div>
+       <Router>
+        <Switch>
+         <Route path="/" exact>
+            <Home />
+          </Route> 
+          <Route path="/checkout" exact>
+            <Checkout />
+          </Route>    
+        </Switch>
+       </Router>
     </main>
   )
 }
