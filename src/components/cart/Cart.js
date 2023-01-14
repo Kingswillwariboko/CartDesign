@@ -37,7 +37,7 @@ const Cart = ()=>{
             </div>
             <div className="cart__two">
                 <div className="cart__two-one">
-                    <span className="price-one">{post.fields.price}</span>
+                    <span className="price-one">{post.fields.prices}</span>
                 </div>
 
                 <div className="cart__two-two">

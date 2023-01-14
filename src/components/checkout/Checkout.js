@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { createClient } from "contentful"
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import log from "../../assets/logo-transparent.svg";
-
-
 import "./checkout.scss"
 import { Link } from 'react-router-dom';
+import { PaystackButton } from 'react-paystack';
 
 const Checkout = () => {
+  const[amount, setAmount] = useState(13)
+    const[number, setNumber]= useState('')
+    const[email, setEmail]= useState('')
   const [info, setInfo] = useState([])
   const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
 
@@ -15,7 +16,6 @@ const Checkout = () => {
     const getAllEntries = async () => {
       try {
         await client.getEntries().then((entries) => {
-          
           setInfo(entries)
         })
       } catch (error) {
@@ -25,47 +25,42 @@ const Checkout = () => {
     getAllEntries()
   }, [])
 
-    // const[name, setName] = useState('')
-    // const[number, setNumber]= useState('')
-    // const[email, setEmail]= useState('')
-
-  //   const handleSubmit = (e) =>{
-  //     e.preventDefault();
- 
     
-  //     db.collection("contacts")
-  //    .add({
-  //       email,
-  //       name,
-  //       number,
-  //    }).then(()=>{
-  //        console.log('success')
-  //        setTimeout(() => {
-  //          }, 5000); 
-  //          setEmail("")
-  //          setName('')
-  //          setNumber('')
-  //    }).catch((error)=>{
-  //       console.log(error.message)
-  //    })
-  // }
+
+const config = {
+    reference: (new Date()).getTime().toString(),
+    email,
+    number,
+    amount: amount * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+    publicKey: 'pk_live_bff6985b4456f2475dd230d27bcc7b61fd3fd38a',
+};
+
+const handlePaystackSuccessAction = (reference) => {
+  // Implementation for whatever you want to do with reference and after success call.
+  console.log(reference);
+};
+
+// you can call this function anything
+const handlePaystackCloseAction = () => {
+  // implementation for  whatever you want to do when the Paystack dialog closed.
+  console.log('closed')
+}
+
+const componentProps = {
+    ...config,
+    text: 'Paystack Button Implementation',
+    onSuccess: (reference) => handlePaystackSuccessAction(reference),
+    onClose: handlePaystackCloseAction,
+};
 
   return (
+
     <div>
-          <div className="header__one">
+          <div className="header__onee">
                 <img src={log} alt="shopbiema" />
             </div>
         <form>
-            {/* <p>Kindly fill up to pay </p>
-            <div className='inp'>
-                <label>Full Name*</label> 
-                <input
-                        value={name}
-                        placeholder="Full Name"
-                        onChange={(e)=> setName(e.target.value)}
-                        required
-                    />
-            </div>
+            <p>Kindly fill up to pay </p>
             <div className='inp'>
                 <label>Email*</label> 
                 <input
@@ -85,32 +80,16 @@ const Checkout = () => {
                         required
                     />
             </div>
-             */}
-      <div className='button'>
-      <PayPalScriptProvider>
-        <PayPalButtons type="submit"
-          createOrder={(data, actions) => {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  amount: {
-                    value: "13.99",
-                  },
-                },
-              ],
-            });
-          }}
-          onApprove={async (data, actions) => {
-            const details = await actions.order.capture();
-            const name = details.payer.name.given_name;
-            alert("Transaction completed by " + name);
-          }}
-        />
-      </PayPalScriptProvider>
-      </div>
-          </form>
+
+            
+            <div className='amount'>
+              {amount}
+            </div>
+
+            <PaystackButton  {...componentProps} />
+          </form>  
     </div>
   )
 }
 
-export default Checkout
+export default Checkout;
