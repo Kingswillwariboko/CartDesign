@@ -9,14 +9,14 @@ import { PaystackConsumer } from 'react-paystack';
 
 
 const Checkout = () => {
-  const[amount, setAmount] = useState(13)
+    const[amount, setAmount] = useState(13)
     const[number, setNumber]= useState('')
     const[email, setEmail]= useState('')
 
     const config = {
       reference: (new Date()).getTime().toString(),
       email,
-      amount, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+      amount: amount * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
       publicKey: 'pk_live_bff6985b4456f2475dd230d27bcc7b61fd3fd38a',
     };
     
@@ -35,7 +35,7 @@ const Checkout = () => {
   
     const componentProps = {
       ...config,
-      text: 'Paystack Button Implementation',
+      text: 'Pay with Paystack',
       onSuccess: (reference) => handleSuccess(reference),
       onClose: handleClose
   };
@@ -61,6 +61,7 @@ const Checkout = () => {
             <div className='inp'>
                 <label>Phone number*</label> 
                 <input
+                        
                         value={number}
                         placeholder="Enter phone number"
                         onChange={(e)=> setNumber(e.target.value)}
@@ -68,10 +69,14 @@ const Checkout = () => {
                     />
             </div>
 
+            <div className=''>
+               <p>Ammount: {amount} Naira</p>
+            </div>
+       
          
 
-            <PaystackConsumer {...componentProps} >
-          {({initializePayment}) => <button onClick={() => initializePayment(handleSuccess, handleClose)}>Paystack Consumer Implementation</button>}
+        <PaystackConsumer  {...componentProps} >
+          {({initializePayment}) => <button className="paystack" onClick={() => initializePayment(handleSuccess, handleClose)}>Pay with Paystack</button>}
         </PaystackConsumer>
           </form>  
     </div>
