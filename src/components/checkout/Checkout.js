@@ -3,42 +3,29 @@ import { createClient } from "contentful"
 import log from "../../assets/logo-transparent.svg";
 import "./checkout.scss"
 import { Link } from 'react-router-dom';
-import { PaystackButton } from 'react-paystack';
+import { PaystackButton } from 'react-paystack'
 import { PaystackConsumer } from 'react-paystack';
 
 
-
 const Checkout = () => {
+  const publicKey = "pk_live_bff6985b4456f2475dd230d27bcc7b61fd3fd38a"
     const[amount, setAmount] = useState(13)
     const[number, setNumber]= useState('')
     const[email, setEmail]= useState('')
 
-    const config = {
-      reference: (new Date()).getTime().toString(),
+    const componentProps = {
       email,
-      amount: amount * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-      publicKey: 'pk_live_bff6985b4456f2475dd230d27bcc7b61fd3fd38a',
-    };
-    
-    // you can call this function anything
-    const handleSuccess = (reference) => {
-    // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
-    };
-    
-    // you can call this function anything
-    const handleClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
-    console.log('closed')
+      amount,
+      metadata: {
+        number,
+      },
+      publicKey,
+      text: "Pay Now",
+      onSuccess: () =>
+        alert("Thanks for doing business with us! Come back soon!!"),
+      onClose: () => alert("Wait! Don't leave :("),
     }
   
-  
-    const componentProps = {
-      ...config,
-      text: 'Pay with Paystack',
-      onSuccess: (reference) => handleSuccess(reference),
-      onClose: handleClose
-  };
 
   return (
 
@@ -69,15 +56,10 @@ const Checkout = () => {
                     />
             </div>
 
-            <div className=''>
-               <p>Ammount: {amount} Naira</p>
-            </div>
-       
+            
          
 
-        <PaystackConsumer  {...componentProps} >
-          {({initializePayment}) => <button className="paystack" onClick={() => initializePayment(handleSuccess, handleClose)}>Pay with Paystack</button>}
-        </PaystackConsumer>
+            <PaystackButton className="paystack" {...componentProps} />
           </form>  
     </div>
   )
