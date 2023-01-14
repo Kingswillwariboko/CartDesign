@@ -11,6 +11,7 @@ import Checkout from './components/checkout/Checkout';
 import Home from './Pages/Home/Home';
 
 const App = () =>{
+  
   return(
     <main>
        <Router>

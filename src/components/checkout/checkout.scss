@@ -10,10 +10,10 @@ form{
    @media (min-width: 768px){
     width:40%;
     padding: 2rem;
-    top: 50%;
+    top:30%;
     margin-top: 2rem;
      background: #FFFFFF;
-     box-shadow: 0px 8px 24px rgba(112, 144, 176, 0.2);
+    
      border-radius: 12px;
      margin-bottom: 1rem;
  }
@@ -56,13 +56,7 @@ border-radius: 4px;
         
     }
 
-    .paystack{
-        margin-top: 1rem;
-        padding: .5rem;
-        background-color: green;
-        color: #FFFFFF;
-        border: 0;
-    }
+    
     
 }
 .header__onee{
@@ -78,4 +72,16 @@ border-radius: 4px;
     }
 
     
+}
+
+.paystack{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 1rem;
+    padding: .5rem;
+    background-color: green;
+    color: #FFFFFF;
+    border: 0;
 }
