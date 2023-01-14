@@ -11,8 +11,8 @@ const Footer = () => {
 
         <div>
             <h3>Shopbiema</h3>
-            <p><AiTwotoneMail/> shopbiema@gmail.com</p> 
-           <p><IoIosCall/>  +234123456</p> 
+            <p><AiTwotoneMail className='mail'/> shopbiema@gmail.com</p> 
+           <p><IoIosCall className='call'/>  +234123456</p> 
         </div>
     </div>
   )

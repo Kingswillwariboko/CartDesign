@@ -14,7 +14,9 @@ const Cart = ()=>{
     const getAllEntries = async () => {
       try {
         await client.getEntries().then((entries) => {
+          
           setInfo(entries)
+          
         })
       } catch (error) {
         console.log(`Error fetching authors ${error}`);

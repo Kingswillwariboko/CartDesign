@@ -15,7 +15,7 @@ const Checkout = () => {
     const getAllEntries = async () => {
       try {
         await client.getEntries().then((entries) => {
-          console.log(entries.items)
+          
           setInfo(entries)
         })
       } catch (error) {
