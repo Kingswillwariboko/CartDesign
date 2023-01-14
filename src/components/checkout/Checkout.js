@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { createClient } from "contentful"
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import log from "../../assets/logo-transparent.svg";
 
@@ -7,6 +8,23 @@ import "./checkout.scss"
 import { Link } from 'react-router-dom';
 
 const Checkout = () => {
+  const [info, setInfo] = useState([])
+  const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
+
+  useEffect(() => {
+    const getAllEntries = async () => {
+      try {
+        await client.getEntries().then((entries) => {
+          console.log(entries.items)
+          setInfo(entries)
+        })
+      } catch (error) {
+        console.log(`Error fetching authors ${error}`);
+      }
+    };
+    getAllEntries()
+  }, [])
+
     // const[name, setName] = useState('')
     // const[number, setNumber]= useState('')
     // const[email, setEmail]= useState('')

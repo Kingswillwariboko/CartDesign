@@ -15,7 +15,6 @@ const Carousel = ()=> {
     const getAllEntries = async () => {
       try {
         await client.getAssets().then((entries) => {
-          console.log(entries)
           setImages(entries)
         })
       } catch (error) {

@@ -52,6 +52,15 @@ border-radius: 4px;
     }
     
 }
-.header__one{
+.header__onee{
     text-align: center;
+
+    img{
+        width: 20%;
+
+        @media (min-width: 768px){
+            width: 6%;
+            margin-left: 1.9rem;
+        }
+    }
 }

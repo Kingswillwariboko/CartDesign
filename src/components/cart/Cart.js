@@ -14,7 +14,6 @@ const Cart = ()=>{
     const getAllEntries = async () => {
       try {
         await client.getEntries().then((entries) => {
-          console.log(entries)
           setInfo(entries)
         })
       } catch (error) {
@@ -36,7 +35,7 @@ const Cart = ()=>{
             </div>
             <div className="cart__two">
                 <div className="cart__two-one">
-                    <span className="price-one">$130</span>
+                    <span className="price-one">{post.fields.price}</span>
                 </div>
 
                 <div className="cart__two-two">
