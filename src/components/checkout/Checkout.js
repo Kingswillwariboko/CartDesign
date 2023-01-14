@@ -4,54 +4,41 @@ import log from "../../assets/logo-transparent.svg";
 import "./checkout.scss"
 import { Link } from 'react-router-dom';
 import { PaystackButton } from 'react-paystack';
+import { PaystackConsumer } from 'react-paystack';
+
+
 
 const Checkout = () => {
   const[amount, setAmount] = useState(13)
     const[number, setNumber]= useState('')
     const[email, setEmail]= useState('')
-  const [info, setInfo] = useState([])
-  const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
 
-  useEffect(() => {
-    const getAllEntries = async () => {
-      try {
-        await client.getEntries().then((entries) => {
-          setInfo(entries)
-        })
-      } catch (error) {
-        console.log(`Error fetching authors ${error}`);
-      }
+    const config = {
+      reference: (new Date()).getTime().toString(),
+      email,
+      amount, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+      publicKey: 'pk_live_bff6985b4456f2475dd230d27bcc7b61fd3fd38a',
     };
-    getAllEntries()
-  }, [])
-
     
-
-const config = {
-    reference: (new Date()).getTime().toString(),
-    email,
-    number,
-    amount: amount * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: 'pk_live_bff6985b4456f2475dd230d27bcc7b61fd3fd38a',
-};
-
-const handlePaystackSuccessAction = (reference) => {
-  // Implementation for whatever you want to do with reference and after success call.
-  console.log(reference);
-};
-
-// you can call this function anything
-const handlePaystackCloseAction = () => {
-  // implementation for  whatever you want to do when the Paystack dialog closed.
-  console.log('closed')
-}
-
-const componentProps = {
-    ...config,
-    text: 'Paystack Button Implementation',
-    onSuccess: (reference) => handlePaystackSuccessAction(reference),
-    onClose: handlePaystackCloseAction,
-};
+    // you can call this function anything
+    const handleSuccess = (reference) => {
+    // Implementation for whatever you want to do with reference and after success call.
+    console.log(reference);
+    };
+    
+    // you can call this function anything
+    const handleClose = () => {
+    // implementation for  whatever you want to do when the Paystack dialog closed.
+    console.log('closed')
+    }
+  
+  
+    const componentProps = {
+      ...config,
+      text: 'Paystack Button Implementation',
+      onSuccess: (reference) => handleSuccess(reference),
+      onClose: handleClose
+  };
 
   return (
 
@@ -81,12 +68,11 @@ const componentProps = {
                     />
             </div>
 
-            
-            <div className='amount'>
-              {amount}
-            </div>
+         
 
-            <PaystackButton  {...componentProps} />
+            <PaystackConsumer {...componentProps} >
+          {({initializePayment}) => <button onClick={() => initializePayment(handleSuccess, handleClose)}>Paystack Consumer Implementation</button>}
+        </PaystackConsumer>
           </form>  
     </div>
   )
