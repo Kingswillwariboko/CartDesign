@@ -15,8 +15,8 @@ const Carousel = ()=> {
 
   useEffect(() => {
     const getAllEntries = async () => {
-        setLoading(true)
       try {
+        setLoading(true)
         await client.getAssets().then((entries) => {
           setImages(entries)
           setLoading(false)
@@ -68,7 +68,9 @@ const Carousel = ()=> {
 
    
      
-    
+    if(loading){
+        <div>loading...</div>
+    }
 
     return(
         <main className="main-main">

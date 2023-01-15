@@ -37,7 +37,7 @@ const Header = () => {
                     <div className="header__close">
                       <img onClick={(e) => setActive(prev => false)} className="img" src={cancel} alt=""/>
                     </div>
-                )
+                )e]
             } */}
         </header>
         </>

@@ -8,25 +8,23 @@ import { PaystackConsumer } from 'react-paystack';
 
 
 const Checkout = () => {
-    const[amount, setAmount] = useState(13)
+    const[amount, setAmount] = useState()
     const[number, setNumber]= useState('')
     const[email, setEmail]= useState('')
-    const [info, setInfo] = useState([])
   const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
 
     useEffect(() => {
       const getAllEntries = async () => {
         try {
           await client.getEntry('6Jg48bibzbu3SdNVBv5Ruq').then((entry) => {
-            setInfo(entry)
-            console.log(entry.items)
+            setAmount(entry.fields.prices)
           })
         } catch (error) {
           console.log(`Error fetching authors ${error}`);
         }
       };
       getAllEntries()
-    }, [info, client])
+    }, [amount, client])
 
    
 
