@@ -1,19 +1,13 @@
 form{
     width: 80%;
     margin: 0 auto;
-    margin-top: 1rem;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
+    margin-top: 5rem;
+    
    @media (min-width: 768px){
     width:40%;
     padding: 2rem;
-    top:30%;
     margin-top: 2rem;
      background: #FFFFFF;
-    
      border-radius: 12px;
      margin-bottom: 1rem;
  }
@@ -74,14 +68,27 @@ border-radius: 4px;
     
 }
 
-.paystack{
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 1rem;
-    padding: .5rem;
-    background-color: green;
-    color: #FFFFFF;
-    border: 0;
+.btn-cover{
+   
+    @media (min-width: 768px){
+        margin: 0 auto;
+        width:40%;
+        margin-top: -3rem;
+        
+     }
+    .paystack{
+        margin-top: 1rem;
+        padding: .5rem;
+        background-color: green;
+        color: #FFFFFF;
+        border: 0;
+        margin-left: 2.5rem;
+
+        @media (min-width: 768px){
+            margin-left: 0;
+           
+            
+         }
+    }
 }
+

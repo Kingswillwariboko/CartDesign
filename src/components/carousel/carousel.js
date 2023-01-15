@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { createClient } from "contentful"
 import next from "../../assets/icon-next.svg"
 import previous from "../../assets/icon-previous.svg"
@@ -9,54 +9,66 @@ import "./carousel.scss"
 
 const Carousel = ()=> {
     const [images, setImages] = useState([])
+    const [loading, setLoading] = useState(false)
+    const[currentIndex, setCurrentIndex] = useState(0)
   const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
 
   useEffect(() => {
     const getAllEntries = async () => {
+        setLoading(true)
       try {
         await client.getAssets().then((entries) => {
           setImages(entries)
+          setLoading(false)
         })
       } catch (error) {
         console.log(`Error fetching authors ${error}`);
       }
     };
     getAllEntries()
-  }, [images, client])
+    
+  }, [])
+
+//   useEffect(()=>{
+//     const interval= setInterval(()=>{carouselScroll()},3000)
+
+//     return () => clearInterval(interval)
+//   })
     
 
-    const[currentIndex, setCurrentIndex] = useState(0)
+    
 
-    const carouselScroll = () =>{
-        if(currentIndex === images.length -1){
-            return setCurrentIndex(0)
-        }else{
-            setCurrentIndex(currentIndex + 1)
-        }
-    }
+    // const carouselScroll = () =>{
+    //      if(currentIndex === images.length -1){
+    //         return setCurrentIndex(0)
+    //     }else{
+    //        setCurrentIndex(currentIndex + 1)
+    //  }
+    // }
 
     const nextMove = ()=>{
-        if(currentIndex === images.length -1){
+        if(currentIndex === images.items.length -1){
             return setCurrentIndex(0)
         }else{
             setCurrentIndex(currentIndex + 1)
         }
+
+        console.log(currentIndex)
+        console.log(images.items.length)
     }
 
     const previousMove = () =>{
-        if(currentIndex === images.length -1){
-            return setCurrentIndex(currentIndex - 1)
+        if(currentIndex === images.items.length -1){
+            return setCurrentIndex(0)
         }else{
             setCurrentIndex(currentIndex - 1)
         }
+        console.log(currentIndex)
     }
 
-    useEffect(()=>{
-        const interval= setInterval(()=>{carouselScroll()},3000)
-
-        return () => clearInterval(interval)
-    })
-
+   
+     
+    
 
     return(
         <main className="main-main">
@@ -80,9 +92,9 @@ const Carousel = ()=> {
             <div className="carousel-container-desktop">
             {images?.items?.slice(0,3).map((image) => (
                      <div key={image.fields.title} className="carousel-item"
-                        style={{transform: `translate(-${currentIndex * 100}%)`}}><img src={image.fields.file.url} alt=""/></div>
-                        
-                        ))}      
+                    style={{transform: `translate(-${currentIndex * 100}%)`}}><img src={image.fields.file.url} alt=""/></div>
+                    
+                ))}
             </div>    
 
             <div className="carousel-menu">
