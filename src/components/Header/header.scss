@@ -1,11 +1,12 @@
 .header{
-    margin: 2rem; 
+    margin: 1rem; 
     display: flex;
     align-items: center;
     justify-content: space-between;
     
     @media (min-width: 768px){
         text-align: left;
+        margin: 2rem; 
     }
 
     button{
@@ -19,6 +20,8 @@
             margin-right: 2rem;
             font-size: 1.2rem;
             padding: .5rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
     }
  

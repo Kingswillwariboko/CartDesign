@@ -14,6 +14,8 @@ const Home = () => {
         <Carousel />
         <Cart />
     </div>
+
+    <Footer />
   </main>
   )
 }

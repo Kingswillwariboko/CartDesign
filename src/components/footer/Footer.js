@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoIosCall } from 'react-icons/io';
 import { AiTwotoneMail } from 'react-icons/ai';
+import log from "../../assets/logo-transparent.svg";
 
 import "./footer.scss"
 
@@ -9,10 +10,9 @@ const Footer = () => {
     <div className='footer'>
         <hr />
 
-        <div>
-            <h3>Shopbiema</h3>
-            <p><AiTwotoneMail className='mail'/> shopbiema@gmail.com</p> 
-           <p><IoIosCall className='call'/>  +234123456</p> 
+        <div className='flex'>
+            <img src={log} alt=""/>
+            <p>All Rights Reserved © 2022</p>
         </div>
     </div>
   )
