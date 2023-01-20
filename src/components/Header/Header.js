@@ -1,9 +1,4 @@
 import React, {useState} from "react"
-import icon from "../../ecommerce-product-page-main/images/icon-menu.svg";
-import logo from "../../ecommerce-product-page-main/images/logo.svg";
-import cart from "../../ecommerce-product-page-main/images/icon-cart.svg";
-import avatar from "../../ecommerce-product-page-main/images/image-avatar.png";
-import cancel from "../../ecommerce-product-page-main/images/icon-close.svg";
 import log from "../../assets/logo-transparent.svg";
 
 import "./header.scss"
@@ -18,6 +13,10 @@ const Header = () => {
             <div className="header__one">
                 <img src={log} alt="shopbiema" />
             </div>
+
+            <div>
+                <button>Contact</button>
+            </div>    
 
             {/* <div className="header__two">
                 <img className="cart" src={cart}  alt=""/>

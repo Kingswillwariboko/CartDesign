@@ -1,12 +1,27 @@
 .header{
-    text-align: center;
     margin: 2rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     
     @media (min-width: 768px){
         text-align: left;
-       
     }
 
+    button{
+        font-size: 1rem;
+        background-color: inherit;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: .3rem;
+
+        @media (min-width: 768px){
+            margin-right: 2rem;
+            font-size: 1.2rem;
+            padding: .5rem;
+        }
+    }
+ 
 
 
     &__one{
@@ -15,9 +30,11 @@
             width: 20%;
 
             @media (min-width: 768px){
-                width: 6%;
+                width: 20%;
                 margin-left: 1.9rem;
             }
         }
+
+       
     }
 }
