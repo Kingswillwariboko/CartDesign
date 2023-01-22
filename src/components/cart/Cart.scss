@@ -68,3 +68,19 @@ a{
     color: #ffffff;
     text-decoration: none;
 }
+.float{
+    position: fixed;
+    top: 90%;
+    left: 80%;
+    background-color: inherit;
+            border: 0;
+
+            @media (min-width: 768px){
+                display: none;
+            }
+}
+
+
+.problems{
+    display: none;
+}

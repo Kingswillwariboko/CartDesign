@@ -69,7 +69,7 @@ const Checkout = () => {
                 <label>Email*</label> 
                 <input
                         value={email}
-                        placeholder="Enter phone number"
+                        placeholder="Enter your email"
                         onChange={(e)=> setEmail(e.target.value)}
                         required
                     />
@@ -95,8 +95,6 @@ const Checkout = () => {
             {({initializePayment}) => <button className="paystack" onClick={() => initializePayment(handleSuccess, handleClose)}>Pay with Paystack</button>}
           </PaystackConsumer>
           </div>
-
-        
     </div>
   )
 }

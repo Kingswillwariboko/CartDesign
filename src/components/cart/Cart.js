@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { createClient } from "contentful"
+import msg from "../../assets/message - mobile.svg"
 import "./Cart.scss"
 import { Link } from 'react-router-dom'
+
+
+function Mailto({ email, subject, body, ...props }) {
+  return (
+    <a href={`mailto:${email}?subject=${subject || ""}&body=${body || ""}`}>
+      {props.children}
+    </a>
+  );
+}
 
 const Cart = ()=>{
 
@@ -12,9 +22,7 @@ const Cart = ()=>{
     const getAllEntries = async () => {
       try {
         await client.getEntries().then((entries) => {
-          
-          setInfo(entries)
-          
+          setInfo(entries)  
         })
       } catch (error) {
         console.log(`Error fetching authors ${error}`);
@@ -48,6 +56,12 @@ const Cart = ()=>{
                 </div>
             </div>
         </div>))}
+
+        <Mailto email="ajibolayinka45@gmail.com" subject="Hello" body="Hello world!">
+                            <button className="float">
+                                 <img src={msg} alt="" />
+                            </button>
+        </Mailto>
         </>
     )
 }
