@@ -79,14 +79,34 @@ border-radius: 4px;
     .paystack{
         margin-top: 1rem;
         padding: 1rem;
-        background-color: green;
+        background-color: rgb(9, 186, 206);
         color: #FFFFFF;
+        border-radius: 10px;
         border: 0;
         margin-left: 2.5rem;
 
         @media (min-width: 768px){
             margin-left: 0;
          }
+
+         
+        
+    }
+
+    .cards{
+        margin: 1.5rem;
+        margin-top: 3rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .img{
+            width: 17%;
+            margin-left: 2rem;
+        }
+        .verve{
+            width: 33%;
+        }
     }
 }
 

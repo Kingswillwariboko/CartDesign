@@ -11,7 +11,7 @@ const Carousel = ()=> {
     const [images, setImages] = useState([])
     const [loading, setLoading] = useState(false)
     const[currentIndex, setCurrentIndex] = useState(0)
-  const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
+    const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
 
   useEffect(() => {
     const getAllEntries = async () => {

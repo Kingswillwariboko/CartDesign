@@ -5,6 +5,9 @@ import "./checkout.scss"
 import { Link } from 'react-router-dom';
 import { PaystackButton } from 'react-paystack'
 import { PaystackConsumer } from 'react-paystack';
+import master from "../../assets/icons8-mastercard-logo.svg";
+import visa from "../../assets/icons8-visa.svg"
+import verve from "../../assets/verve.svg"
 
 
 const Checkout = () => {
@@ -64,7 +67,7 @@ const Checkout = () => {
             </div>
             
         <form>
-            <p>Kindly fill up to pay </p>
+            <p>Kindly fill up to pay to complete purchase</p>
             <div className='inp'>
                 <label>Email*</label> 
                 <input
@@ -94,7 +97,13 @@ const Checkout = () => {
             <PaystackConsumer  {...componentProps} >
             {({initializePayment}) => <button className="paystack" onClick={() => initializePayment(handleSuccess, handleClose)}>Pay with Paystack</button>}
           </PaystackConsumer>
-          </div>
+
+            <div className="cards">
+               <img className='verve' src={verve} alt=""/>
+                <img className='img' src={master} alt=""/>
+                <img className='img' src={visa} alt=""/>
+            </div>
+          </div>   
     </div>
   )
 }
