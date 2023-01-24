@@ -12,7 +12,7 @@ const Footer = () => {
 
         <div className='flex'>
             <img src={log} alt=""/>
-            <p>All Rights Reserved © 2022</p>
+            <p>All Rights Reserved © 2023</p>
         </div>
     </div>
   )

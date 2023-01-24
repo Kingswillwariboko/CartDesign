@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { createClient } from "contentful"
-import msg from "../../assets/message - mobile.svg"
+import msg from "../../assets/icons8-chat-room-64.png"
 import "./Cart.scss"
 import { Link } from 'react-router-dom'
 
