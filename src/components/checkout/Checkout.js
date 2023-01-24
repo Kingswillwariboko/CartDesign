@@ -14,6 +14,9 @@ const Checkout = () => {
     const[amount, setAmount] = useState()
     const[number, setNumber]= useState('')
     const[email, setEmail]= useState('')
+    const[name, setName]= useState('')
+    const[address, setAddress]= useState('')
+    const[zip, setZip]= useState('')
   const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
 
     useEffect(() => {
@@ -69,6 +72,15 @@ const Checkout = () => {
         <form>
             <p>Kindly fill up to pay to complete purchase</p>
             <div className='inp'>
+                <label>Full Name*</label> 
+                <input
+                        value={name}
+                        placeholder="Enter full name"
+                        onChange={(e)=> setName(e.target.value)}
+                        required
+                    />
+            </div>
+            <div className='inp'>
                 <label>Email*</label> 
                 <input
                         value={email}
@@ -86,6 +98,26 @@ const Checkout = () => {
                         onChange={(e)=> setNumber(e.target.value)}
                         required
                     />
+            </div>
+
+            <div className='inp'>
+                <label>Address*</label> 
+                <input
+                        value={address}
+                        placeholder="Enter Address"
+                        onChange={(e)=> setAddress(e.target.value)}
+                        required
+                    />
+            </div>
+
+            <div className='inp'>
+                <label>Zip code*</label> 
+                <input
+                        value={zip}
+                        placeholder="Zip code"
+                        onChange={(e)=> setName(e.target.value)}
+                        required
+                  />
             </div>
 
             <div className=''>
