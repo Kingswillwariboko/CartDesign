@@ -147,7 +147,7 @@ const Checkout = () => {
                 <input
                         value={zip}
                         placeholder="Zip code"
-                        onChange={(e)=> setName(e.target.value)}
+                        onChange={(e)=> setZip(e.target.value)}
                         required
                   />
             </div>
@@ -161,7 +161,7 @@ const Checkout = () => {
 
           <div className='btn-cover'>
             <PaystackConsumer  {...componentProps} >
-            {({initializePayment}) => <button className="paystack" onClick={() => initializePayment(handleSuccess, handleClose)}>Pay with Paystack</button>}
+            {({initializePayment}) => <button disabled={false} className="paystack" onClick={() => initializePayment(handleSuccess, handleClose)}>Pay with Paystack</button>}
           </PaystackConsumer>
 
             <div className="cards">
