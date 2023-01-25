@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createClient } from "contentful"
 import log from "../../assets/logo-transparent.svg";
 import "./checkout.scss"
@@ -8,6 +8,7 @@ import { PaystackConsumer } from 'react-paystack';
 import master from "../../assets/icons8-mastercard-logo.svg";
 import visa from "../../assets/icons8-visa.svg"
 import verve from "../../assets/verve.svg"
+import {db} from "../../firebase";
 
 
 const Checkout = () => {
@@ -17,6 +18,8 @@ const Checkout = () => {
     const[name, setName]= useState('')
     const[address, setAddress]= useState('')
     const[zip, setZip]= useState('')
+    const dataRef = useRef()
+
   const client = createClient({ space: "audrfmrh2x7a", accessToken: "Ol36WYE4bG73TURBza9PYrYYdx2hg4u2sjiBwC9X46g"})
 
     useEffect(() => {
@@ -32,6 +35,33 @@ const Checkout = () => {
       getAllEntries()
     }, [amount, client])
 
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      // setLoading(true)
+    
+      db.collection("contacts")
+     .add({
+        email,
+        name,
+        address,
+        zip,
+        number,
+     }).then(()=>{
+         console.log('success')
+        //  setTimeout(() => {
+        //    setShowMessage(false)
+        //    }, 5000); 
+           setEmail("")
+           setName('')
+           setAddress('')
+           setNumber('')
+           setNumber('')
+          //  setLoading(false)
+     }).catch((error)=>{
+        console.log(error.message)
+     })
+    }
    
 
     const config = {
@@ -43,6 +73,8 @@ const Checkout = () => {
     
     // you can call this function anything
     const handleSuccess = (reference) => {
+
+      dataRef.current.click();
     // Implementation for whatever you want to do with reference and after success call.
     console.log(reference);
     };
@@ -69,7 +101,7 @@ const Checkout = () => {
               </Link>
             </div>
             
-        <form>
+        <form onSubmit={handleSubmit}>
             <p>Kindly fill up to pay to complete purchase</p>
             <div className='inp'>
                 <label>Full Name*</label> 
@@ -123,6 +155,8 @@ const Checkout = () => {
             <div className=''>
                <p>Amount: {amount} Naira</p>
             </div>
+
+           <button ref={dataRef} type="submit"></button>
           </form>  
 
           <div className='btn-cover'>
