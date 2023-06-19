@@ -48,7 +48,7 @@ const Cart = ()=>{
 
                 <div className="cart__two-two">
                   
-                <Link to="/checkout">
+                <Link>
                     <button className="add-btn">
                       Buy now  
                     </button>
@@ -56,12 +56,12 @@ const Cart = ()=>{
                 </div>
             </div>
         </div>))}
-
+{/* 
         <Mailto email="ajibolayinka45@gmail.com" subject="Hello" body="Hello world!">
                             <button className="float">
                                  <img src={msg} alt="" />
                             </button>
-        </Mailto>
+        </Mailto> */}
         </>
     )
 }
