@@ -9,6 +9,7 @@ import master from "../../assets/icons8-mastercard-logo.svg";
 import visa from "../../assets/icons8-visa.svg"
 import verve from "../../assets/verve.svg"
 import {db} from "../../firebase";
+import card from "../../assets/Group 877.svg"
 
 
 const Checkout = () => {
@@ -94,72 +95,70 @@ const Checkout = () => {
   };
 
   return (
-    <div>
+    <div className='checkout'>
+
           <div className="header__onee">
               <Link to="/">
                   <img src={log} alt="shopbiema" />
               </Link>
             </div>
-            
-        <form onSubmit={handleSubmit}>
-            <p>Kindly fill up to pay to complete purchase</p>
-            <div className='inp'>
-                <label>Full Name*</label> 
-                <input
-                        value={name}
-                        placeholder="Enter full name"
-                        onChange={(e)=> setName(e.target.value)}
-                        required
-                    />
-            </div>
-            <div className='inp'>
-                <label>Email*</label> 
-                <input
-                        value={email}
-                        placeholder="Enter your email"
-                        onChange={(e)=> setEmail(e.target.value)}
-                        required
-                    />
+        <div className='flex'>
+          <form onSubmit={handleSubmit}>
+              <p>Kindly fill up to pay to complete purchase</p>
+              <div className='inp'>
+                  <label>Full Name*</label> 
+                  <input
+                          value={name}
+                          placeholder="Enter full name"
+                          onChange={(e)=> setName(e.target.value)}
+                          required
+                      />
+              </div>
+              <div className='inp'>
+                  <label>Email*</label> 
+                  <input
+                          value={email}
+                          placeholder="Enter your email"
+                          onChange={(e)=> setEmail(e.target.value)}
+                          required
+                      />
+              </div>
+
+              <div className='inp'>
+                  <label>Phone number*</label> 
+                  <input
+                          value={number}
+                          placeholder="Enter phone number"
+                          onChange={(e)=> setNumber(e.target.value)}
+                          required
+                      />
+              </div>
+
+              <div className='inp'>
+                  <label>Address*</label> 
+                  <input
+                          value={address}
+                          placeholder="Enter Address"
+                          onChange={(e)=> setAddress(e.target.value)}
+                          required
+                      />
+              </div>
+
+              
+
+              {/* <div className=''>
+                <p>Amount: {amount} Naira</p>
+              </div> */}
+
+                <button ref={dataRef} type="submit">Buy now</button>
+            </form>  
+
+
+            <div className='card'>
+              <img src={card} alt=''/>
             </div>
 
-            <div className='inp'>
-                <label>Phone number*</label> 
-                <input
-                        value={number}
-                        placeholder="Enter phone number"
-                        onChange={(e)=> setNumber(e.target.value)}
-                        required
-                    />
-            </div>
-
-            <div className='inp'>
-                <label>Address*</label> 
-                <input
-                        value={address}
-                        placeholder="Enter Address"
-                        onChange={(e)=> setAddress(e.target.value)}
-                        required
-                    />
-            </div>
-
-            <div className='inp'>
-                <label>Zip code*</label> 
-                <input
-                        value={zip}
-                        placeholder="Zip code"
-                        onChange={(e)=> setZip(e.target.value)}
-                        required
-                  />
-            </div>
-
-            <div className=''>
-               <p>Amount: {amount} Naira</p>
-            </div>
-
-           <button ref={dataRef} type="submit"></button>
-          </form>  
-
-          <div className='btn-cover'>
+          {/* <div className='btn-cover'>
             <PaystackConsumer  {...componentProps} >
             {({initializePayment}) => <button disabled={false} className="paystack" onClick={() => initializePayment(handleSuccess, handleClose)}>Pay with Paystack</button>}
           </PaystackConsumer>
@@ -169,7 +168,9 @@ const Checkout = () => {
                 <img className='img' src={master} alt=""/>
                 <img className='img' src={visa} alt=""/>
             </div>
-          </div>   
+          </div>    */}
+
+      </div>
     </div>
   )
 }
