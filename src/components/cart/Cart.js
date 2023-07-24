@@ -47,7 +47,7 @@ const Cart = ()=>{
                   
                 <Link to='/checkout'>
                     <button className="add-btn">
-                      Buy now  
+                      Buy now
                     </button>
                   </Link>
                 </div>

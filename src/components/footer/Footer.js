@@ -1,6 +1,4 @@
 import React from 'react'
-import { IoIosCall } from 'react-icons/io';
-import { AiTwotoneMail } from 'react-icons/ai';
 import log from "../../assets/logo-transparent.svg";
 
 import "./footer.scss"

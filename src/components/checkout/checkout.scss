@@ -3,8 +3,10 @@
     padding-top: 1rem;
     font-family: 'Roboto';
 
-    @media only screen and (max-width: 480px) {
+
+    @media only screen and (max-width: 768px) {
       padding: 1rem;
+      width: 100%;
       }
 
     .header__onee{
@@ -12,7 +14,7 @@
         img{
             width: 7%;
 
-            @media only screen and (max-width: 480px) {
+            @media only screen and (max-width: 768px) {
                 width: 15%;
                }
         }
@@ -20,32 +22,31 @@
     .flex{
         display: flex;
         margin-top: 3rem;
-
     }
     
     
     form{
         width: 100%;
-        @media only screen and (max-width: 480px) {
-           width: 100%;
-          }
+        @media only screen and (max-width: 768px) {
+           width: 90% !important;
+     }
     
         .inp{
             display: flex;
             flex-direction: column;
 
-            @media only screen and (max-width: 480px) {
+            @media only screen and (max-width: 768px) {
                 text-align: center;
             }
            
             input{
                 border-radius: 8px;
                 border: 1px solid #CACACA;
-                padding: .8rem;
+                padding: .9rem;
                 width: 80%;
 
-                @media only screen and (max-width: 480px) {
-                    width: 90%;
+                @media only screen and (max-width: 768px) {
+                    width: 80%;
                    }
             }
     
@@ -65,7 +66,7 @@
     }
 
     .card{
-        @media only screen and (max-width: 480px) {
+        @media only screen and (max-width: 768px) {
             display: none;
           }
     }
@@ -84,4 +85,8 @@
 
 .flexx{
     width: 50%;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
 }
