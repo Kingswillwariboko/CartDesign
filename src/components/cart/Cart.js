@@ -56,7 +56,7 @@ const Cart = ()=>{
 
         <button onClick={handleWhatsAppClick}className="float">
                               <img src={msg} alt=""/>
-                            </button>
+         </button>
                           
 
         </>
