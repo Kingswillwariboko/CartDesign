@@ -6,7 +6,6 @@
 
     @media only screen and (max-width: 768px) {
       padding: 1rem;
-      width: 100%;
       }
 
     .header__onee{
@@ -28,7 +27,7 @@
     form{
         width: 100%;
         @media only screen and (max-width: 768px) {
-           width: 90% !important;
+           width: 100% !important;
      }
     
         .inp{
@@ -43,10 +42,10 @@
                 border-radius: 8px;
                 border: 1px solid #CACACA;
                 padding: .9rem;
-                width: 80%;
+                width: 90%;
 
                 @media only screen and (max-width: 768px) {
-                    width: 80%;
+                    width: 90%;
                    }
             }
     
