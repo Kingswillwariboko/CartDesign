@@ -26,7 +26,7 @@ const Cart = ()=>{
   const handleWhatsAppClick = () => {
     // Replace YOUR_MESSAGE with the pre-defined message you want to send
     const message = encodeURIComponent('hi welcome to shop biema');
-    window.open(`https://api.whatsapp.com/send?phone=7646464&text=${message}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=+2347088647306&text=${message}`, '_blank');
   };
 
     return(
