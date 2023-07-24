@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { createClient } from "contentful"
-import msg from "../../assets/icons8-chat-room-64.png"
+import msg from "../../assets/whatsapp.png"
 import "./Cart.scss"
 import { Link } from 'react-router-dom'
 
-
-function Mailto({ email, subject, body, ...props }) {
-  return (
-    <a href={`mailto:${email}?subject=${subject || ""}&body=${body || ""}`}>
-      {props.children}
-    </a>
-  );
-}
 
 const Cart = ()=>{
 
@@ -31,6 +23,11 @@ const Cart = ()=>{
     getAllEntries()
   }, [info, client])
 
+  const handleWhatsAppClick = () => {
+    // Replace YOUR_MESSAGE with the pre-defined message you want to send
+    const message = encodeURIComponent('hi welcome to shop biema');
+    window.open(`https://api.whatsapp.com/send?phone=7646464&text=${message}`, '_blank');
+  };
 
     return(
         <>
@@ -43,7 +40,7 @@ const Cart = ()=>{
             </div>
             <div className="cart__two">
                 <div className="cart__two-one">
-                    <span className="price-one">{post.fields.prices}</span>
+                    <span className="price-one">N{post.fields.prices}</span>
                 </div>
 
                 <div className="cart__two-two">
@@ -56,12 +53,12 @@ const Cart = ()=>{
                 </div>
             </div>
         </div>))}
-{/* 
-        <Mailto email="ajibolayinka45@gmail.com" subject="Hello" body="Hello world!">
-                            <button className="float">
-                                 <img src={msg} alt="" />
+
+        <button onClick={handleWhatsAppClick}className="float">
+                              <img src={msg} alt=""/>
                             </button>
-        </Mailto> */}
+                          
+
         </>
     )
 }

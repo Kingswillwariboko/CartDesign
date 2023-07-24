@@ -75,8 +75,14 @@ a{
     background-color: inherit;
             border: 0;
 
+            img{
+                width: 70%;
+            }
+
             @media (min-width: 768px){
                 display: none;
+
+               
             }
 }
 
