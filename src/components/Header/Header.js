@@ -6,6 +6,12 @@ import "./header.scss"
 const Header = () => {
     const[active, setActive] = useState(false)
 
+    const handleWhatsAppClick = () => {
+        // Replace YOUR_MESSAGE with the pre-defined message you want to send
+        const message = encodeURIComponent('hi welcome to shop biema');
+        window.open(`https://api.whatsapp.com/send?phone=+2347088647306&text=${message}`, '_blank');
+      };
+
     return(
         <>
         {active && <div onClick={() =>setActive(prev => false)} className="backdrop"></div>}
@@ -15,7 +21,7 @@ const Header = () => {
             </div>
 
             <div>
-                <button>Contact</button>
+                <button onClick={handleWhatsAppClick}>Contact</button>
             </div>    
 
             {/* <div className="header__two">
