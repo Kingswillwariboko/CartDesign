@@ -43,7 +43,7 @@ const Checkout = () => {
   const config = {
     number,
     email,
-    amount: 4500000, // Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+    amount: 50000, // Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: 'pk_live_bff6985b4456f2475dd230d27bcc7b61fd3fd38a',
   };
 
